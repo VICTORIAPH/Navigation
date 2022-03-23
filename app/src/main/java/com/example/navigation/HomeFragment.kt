@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.navigation.databinding.ActivityMainBinding
 import com.example.navigation.databinding.FragmentHomeBinding
 
@@ -18,9 +19,13 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater,container, false)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+//action_homeFregment
+        val navController =findNavController()
         binding.buttonHomeToInside.setOnClickListener {
-            Toast.makeText(context, "prueba", Toast.LENGTH_SHORT).show()
+          // navController.navigate(R.id.action_homeFragment_to_insideHome)
+            val directions = HomeFragmentDirections.actionHomeFragmentToInsideHome("desde el home")
+             navController.navigate(directions)
         }
       return  binding.root
 

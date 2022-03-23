@@ -18,7 +18,12 @@
         android:id="@+id/insideHome"
         android:name="com.example.navigation.InsideHome"
         android:label="fragment_inside_home"
-        tools:layout="@layout/fragment_inside_home" />
+        tools:layout="@layout/fragment_inside_home" >
+        <argument
+            android:name="argumentoPasado"
+            app:argType="string"
+            android:defaultValue="aaa" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.navigation.ProfileFragment"

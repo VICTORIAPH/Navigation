@@ -17,6 +17,8 @@ class InsideHome : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        //recibimos los parametro
+        val argumentoRecibido = arguments?.getString("argumentoPasado")
         return inflater.inflate(R.layout.fragment_inside_home, container, false)
     }
 }
