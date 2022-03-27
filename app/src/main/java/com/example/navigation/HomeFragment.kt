@@ -20,14 +20,18 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
-//action_homeFregment
+
+    //action_homeFregment
         val navController =findNavController()
-        binding.buttonHomeToInside.setOnClickListener {
-          // navController.navigate(R.id.action_homeFragment_to_insideHome)
-            val directions = HomeFragmentDirections.actionHomeFragmentToInsideHome("desde el home")
+        binding.buttonHomeToRecibir.setOnClickListener {
+          navController.navigate(R.id.action_homeFragment_to_insideHome)
+           val directions = HomeFragmentDirections.actionHomeFragmentToInsideHome()
              navController.navigate(directions)
+            binding.etName.toString()
         }
       return  binding.root
-
     }
+
+
+
 }
